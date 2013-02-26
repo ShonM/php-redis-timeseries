@@ -41,7 +41,7 @@ class RedisTimeseries
 
     function add($data, $origin = null) {
         $now = microtime(true);
-        $this->out('Add' . $now);
+        $this->out('Add ' . $now);
 
         $value = $now . "\x01" . $this->encode($data);
 
@@ -58,7 +58,7 @@ class RedisTimeseries
         $parts = explode("\x01", $record);
 
         if (empty($parts[1])) {
-            throw new \Exception("Record invalid (has no data offset: \"$record\")", 1);
+            return false;
         }
 
         return array(

@@ -22,7 +22,7 @@ $end = $now + 2;
 echo 'Get range from ' . $begin . ' to ' . $end . PHP_EOL;
 $range = $ts->range($begin, $end);
 foreach ($range as $record) {
-    echo 'Record time ' . @$record['time'] . ', data ' . @$record['data'] . PHP_EOL;
+    echo 'Record time ' . $record['time'] . ', data ' . @$record['data'] . PHP_EOL;
 }
 
 echo PHP_EOL;
